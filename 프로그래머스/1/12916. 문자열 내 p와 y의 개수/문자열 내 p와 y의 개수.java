@@ -22,3 +22,41 @@ class Solution {
         return countP == countY;
     }
 }
+
+// 다른 풀이 1 : 람다식
+class Solution {
+    boolean solution(String s) {
+        s = s.toUpperCase();
+
+        return s.chars().filter( e -> 'P'== e).count() == s.chars().filter( e -> 'Y'== e).count();
+    }
+}
+
+// 다른 풀이 2 : 변수 하나로 처리하기
+class Solution {
+    boolean solution(String s) {
+        s = s.toLowerCase();
+        int count = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+
+            if (s.charAt(i) == 'p')
+                count++;
+            else if (s.charAt(i) == 'y')
+                count--;
+        }
+
+        if (count == 0)
+            return true;
+        else
+            return false;
+    }
+}
+
+// 다른 풀이 3 : 정규식
+class Solution {
+    boolean solution(String s) {
+
+        return s.replaceAll("[^yY]", "").length() - s.replaceAll("[^pP]", "").length() == 0 ? true : false;
+    }
+}
