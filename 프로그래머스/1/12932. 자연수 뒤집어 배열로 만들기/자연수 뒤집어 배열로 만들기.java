@@ -11,3 +11,29 @@ class Solution {
         return answer;
     }
 }
+
+// 다른 문제풀이 1
+import java.util.stream.IntStream;
+
+class Solution {
+    public int[] solution(long n) {
+        return new StringBuilder().append(n).reverse().chars().map(Character::getNumericValue).toArray();
+    }
+}
+
+// 다른 문제풀이 2
+class Solution {
+  public int[] solution(long n) {
+      String a = "" + n;
+        int[] answer = new int[a.length()];
+        int cnt=0;
+
+        while(n>0) {
+            answer[cnt]=(int)(n%10);
+            n/=10;
+            System.out.println(n);
+            cnt++;
+        }
+      return answer;
+  }
+}
