@@ -12,3 +12,37 @@ public class Solution {
         return sum;
     }
 }
+
+// 다른 문제풀이 1 : 아스키 코드
+import java.util.*;
+
+public class Solution {
+    public int solution(int n) {
+        int answer = 0;
+
+        char[] arr = Integer.toString(n).toCharArray();
+
+        for(int i = 0; i < arr.length; i++){
+            answer += arr[i] - 48;
+        }
+
+        return answer;
+    }
+}
+
+// 다른 문제풀이 2 : String 변환
+import java.util.*;
+
+public class Solution {
+    public int solution(int n) {
+        int answer = 0;
+
+        String num = String.valueOf(n);
+        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+        for(int i = 0 ; i < num.length() ; i ++){
+            answer += Integer.parseInt(String.valueOf(num.charAt(i)));
+        }
+
+        return answer;
+    }
+}
