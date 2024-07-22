@@ -20,3 +20,15 @@ class Solution {
         return answer;
     }
 }
+
+// 다른 문제풀이
+import java.util.*;
+
+class Solution {
+    public long solution(long n) {
+        return Long.parseLong(String.valueOf(n).chars().mapToObj(ch -> (char) ch)
+                .sorted(Comparator.reverseOrder())
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString());
+    }
+}
