@@ -13,3 +13,29 @@ class Solution {
         return answer;
     }
 }
+
+// 다른 문제풀이 - while문 1
+class Solution {
+    public int solution(int n) {
+        int answer = 1;
+
+        while(true) {
+            if (n%answer==1) break;
+            answer++;
+        }
+
+        return answer;
+    }
+}
+
+// 다른 문제풀이 - while문 2
+class Solution {
+    public int solution(int n) {
+        int answer = 1;
+
+        while(n % answer != 1){
+            answer++;
+        }
+        return answer;
+    }
+}
