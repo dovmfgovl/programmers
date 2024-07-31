@@ -21,3 +21,23 @@ class Solution {
         return answer;
     }
 }
+
+// 다른 문제풀이 1
+class Solution {
+    public int solution(int[] numbers) {
+        int sum = 45;
+        for (int i : numbers) {
+            sum -= i;
+        }
+        return sum;
+    }
+}
+
+// 다른 문제풀이 2
+import java.util.Arrays;
+
+class Solution {
+    public int solution(int[] numbers) {
+        return 45-Arrays.stream(numbers).sum();
+    }
+}
