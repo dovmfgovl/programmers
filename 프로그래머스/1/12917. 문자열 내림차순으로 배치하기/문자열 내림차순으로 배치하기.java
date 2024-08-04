@@ -22,3 +22,39 @@ class Solution {
         return sb.toString();
     }
 }
+
+// 다른 문제풀이 1
+import java.util.Arrays;
+
+public class ReverseStr {
+    public String reverseStr(String str){
+        char[] arr = str.toCharArray();
+        Arrays.sort(arr);
+        return new StringBuilder(new String(arr)).reverse().toString();
+    }
+
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    public static void main(String[] args) {
+        ReverseStr rs = new ReverseStr();
+        System.out.println( rs.reverseStr("Zbcdefg") );
+    }
+}
+
+// 다른 문제풀이 2
+import java.util.stream.Stream;
+import java.util.stream.Collectors;
+import java.util.Comparator;
+
+public class ReverseStr {
+    public String reverseStr(String str){
+        return Stream.of(str.split(""))
+    .sorted(Comparator.reverseOrder())
+    .collect(Collectors.joining());
+    }
+
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    public static void main(String[] args) {
+        ReverseStr rs = new ReverseStr();
+        System.out.println( rs.reverseStr("Zbcdefg") );
+    }
+}
