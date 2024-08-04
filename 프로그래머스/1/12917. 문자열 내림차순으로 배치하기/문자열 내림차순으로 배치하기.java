@@ -1,0 +1,24 @@
+import java.util.Arrays;
+import java.util.Collections;
+
+class Solution {
+    public String solution(String s) {
+        // 문자열을 문자 배열로 변환
+        Character[] charArray = new Character[s.length()];
+        
+        for (int i=0; i<s.length(); i++) {
+            charArray[i] = s.charAt(i);
+        }
+        
+        // 문자 배열을 내림차순으로 정렬
+        Arrays.sort(charArray, Collections.reverseOrder());
+        
+        // 문자 배열을 다시 문자열로 변환
+        StringBuilder sb = new StringBuilder(charArray.length);
+        for (char c : charArray) {
+            sb.append(c);
+        }
+        
+        return sb.toString();
+    }
+}
