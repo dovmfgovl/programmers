@@ -16,3 +16,20 @@ class Solution {
         return false;
     }
 }
+
+// 다른 문제풀이 1 - 정규식
+import java.util.*;
+
+class Solution {
+  public boolean solution(String s) {
+        if (s.length() == 4 || s.length() == 6) return s.matches("(^[0-9]*$)");
+        return false;
+  }
+}
+
+// 다른 문제풀이 2 - 삼항연산자
+class Solution {
+  public boolean solution(String s) {
+    return (s.length() != 4 && s.length() != 6) || (s.split("[0-9]").length > 0) ? false:true;
+  }
+}
