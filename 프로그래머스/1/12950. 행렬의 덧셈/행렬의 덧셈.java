@@ -11,6 +11,7 @@ class Solution {
         return answer;
     }
 }
+
 // 다른 문제풀이 1
 class Solution {
     public int[][] solution(int[][] arr1, int[][] arr2) {
