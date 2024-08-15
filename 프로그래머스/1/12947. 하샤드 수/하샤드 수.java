@@ -11,3 +11,11 @@ class Solution {
         return ogX % num == 0;
     }
 }
+
+// 다른 문제풀이 1
+class Solution {
+    public boolean solution(int x) {
+        int sum = String.valueOf(x).chars().map(ch -> ch - '0').sum();
+        return x % sum == 0;
+    }
+}
