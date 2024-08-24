@@ -18,3 +18,25 @@ class Solution
         return answer;
     }
 }
+
+// 다른 문제풀이 1 - while문 사용
+import java.util.Arrays;
+
+class Solution
+{
+    public int solution(int[] A, int[] B)
+    {
+        int answer = 0;
+        int n = A.length;
+
+        Arrays.sort(A);
+        Arrays.sort(B);
+
+        while(n > 0){
+            answer += (A[A.length - n] * B[n - 1]);
+            n--;
+        }
+
+        return answer;
+    }
+}
