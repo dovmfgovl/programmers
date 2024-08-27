@@ -19,3 +19,35 @@ class Solution {
         return kind;
     }
 }
+
+// 다른 문제풀이 1
+import java.util.HashSet;
+
+class Solution {
+    public int solution(int[] nums) {
+
+            HashSet<Integer> hs = new HashSet<>();
+
+            for(int i =0; i<nums.length;i++) {
+                hs.add(nums[i]);
+            }
+
+            if(hs.size()>nums.length/2)
+                return nums.length/2;
+
+            return hs.size();
+    }
+}
+
+// 다른 문제풀이 2
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+class Solution {
+    public int solution(int[] nums) {
+        return Arrays.stream(nums)
+                .boxed()
+                .collect(Collectors.collectingAndThen(Collectors.toSet(),
+                        phonekemons -> Integer.min(phonekemons.size(), nums.length / 2)));
+    }
+}
